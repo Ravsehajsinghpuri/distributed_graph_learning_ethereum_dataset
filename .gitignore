@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#dgl objects
+*.dgl
+
+#csv dataset
+*.csv
