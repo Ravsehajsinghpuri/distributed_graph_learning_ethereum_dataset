@@ -134,4 +134,4 @@ dmypy.json
 #csv dataset
 *.csv
 
-partitioned_graph*/
+partitioned_graphs*/
