@@ -14,13 +14,13 @@ SELECT
   transaction_index, from_address, to_address, value
 FROM
   `bigquery-public-data.crypto_ethereum.transactions`
-LIMIT 100;
+LIMIT 100000000;
 """
 
 query_job = client.query(query)
 
-iterator = query_job.result(timeout=5000)
+iterator = query_job.result(timeout=50000)
 rows = list(iterator)
 
 df = pd.DataFrame(data=[list(x.values()) for x in rows], columns=list(rows[0].keys()))
-df.to_csv("transaction_data_100.csv")
+df.to_csv("transaction_data_100M.csv")

@@ -80,7 +80,7 @@ def main():
     test_percentage = 10
     val_percentage = 20
 
-    df = pd.read_csv('transaction_data_1M.csv')
+    df = pd.read_csv('transaction_data_10M.csv')
     source = df.from_address.tolist()
     destination = df.to_address.tolist()
     transaction_values = df.value.to_numpy(dtype=np.double)
@@ -118,7 +118,7 @@ def main():
     # print(df.transaction_index)
     print(f"num_nodes={g.num_nodes()}")
     print(f"num_edges={g.num_edges()}")
-    dgl.save_graphs('graph_1M.dgl', [g])
+    dgl.save_graphs('graph_10M.dgl', [g])
 
 if __name__ == "__main__":
     main()
